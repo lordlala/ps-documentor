@@ -18,6 +18,7 @@ Function Get-FunctionsFromFile {
         }
 
         $TempFilePath = "$global:RootFolder\Temp\Temp-$FileNoExt-$(Get-RandomValue -Count 5).ps1"
+        New-Item -Path $TempFilePath -ItemType File -Force 
 
         $Tokens = $null
         $Errors = $null

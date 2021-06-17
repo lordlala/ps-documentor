@@ -10,7 +10,10 @@ Function Start-FileProcessing {
     )
 
     $FileName = Split-Path -Path $File -Leaf
-    $RelativePath = "\$global:ProjectFolderName\$([System.IO.Path]::GetRelativePath($global:ProjectFolderPath, [System.IO.Path]::GetDirectoryName($File)))".TrimEnd('.')
+    $FileObj = Get-ChildItem $File
+    Write-Host $global:ProjectFolderName
+    #$RelativePath = "\$global:ProjectFolderName\$([System.IO.Path]::GetRelativePath($global:ProjectFolderPath, [System.IO.Path]::GetDirectoryName($File)))".TrimEnd('.')
+    $RelativePath = "\$global:ProjectFolderName\"
 
     If ($RelativePath.Chars($RelativePath.Length - 1) -ne '\') {
         $RelativePath = "$RelativePath\"

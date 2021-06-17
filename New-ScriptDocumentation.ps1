@@ -58,7 +58,7 @@ Function New-ScriptDocumentation {
         [Parameter(Mandatory = $false, HelpMessage = 'Defines where the documentation files are beeing saved.')]
         [String]$Destination = "$PSScriptRoot\Output"
     )
-
+    
     $Result = @()
     $global:RootFolder = $PSScriptRoot
 
